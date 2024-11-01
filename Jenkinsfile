@@ -29,6 +29,7 @@ pipeline {
                 sh '''
                     echo "Test stage"
                     test -f build/$BUILD_FILE_NAME
+                    npm test
                 '''
             }
         }
