@@ -59,9 +59,6 @@ pipeline {
                             reuseNode true
                         }
                     }
-                    environment {
-                        CI_ENVIRONMENT_URL = 'https://stellar-puffpuff-d6bc20.netlify.app'
-                    }
                     steps {
                         sh '''
                             npm install serve
@@ -104,7 +101,7 @@ pipeline {
             }
 
             environment {
-                CI_ENVIRONMENT_URL = 'PUT YOUR NETLIFY SITE URL HERE'
+                CI_ENVIRONMENT_URL = 'https://stellar-puffpuff-d6bc20.netlify.app'
             }
 
             steps {
