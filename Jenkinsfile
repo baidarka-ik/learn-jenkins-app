@@ -84,6 +84,10 @@ pipeline {
                 }
             }
 
+            environment {
+                CI_ENVIRONMENT_URL = 'STAGING_URL_TO_BE_SET'
+            }
+
              steps {
                 echo "==============================="
                 echo "${env.CI_ENVIRONMENT_URL}"
