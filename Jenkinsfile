@@ -108,8 +108,8 @@ pipeline {
             environment {
                 CI_ENVIRONMENT_URL = '${env.STAGING_URL}'
             }
-
             steps {
+                echo "${env.STAGING_URL}"
                 sh '''
                     npx playwright test  --reporter=html
                 '''
@@ -124,8 +124,8 @@ pipeline {
 
         stage('Approval') {
             steps {
-                timeout(time: 15, unit: 'MINUTES') {
-                    input message: 'Do you wish to deploy to production?', ok: 'Yes, I am sure!'
+                timeout(time: 1, unit: 'MINUTES') {
+                    input message: 'Do you wish to deploy to production?', ok: 'Yes'
                 }
             }
         }
