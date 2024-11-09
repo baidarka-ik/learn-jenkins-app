@@ -106,10 +106,10 @@ pipeline {
             }
 
             environment {
-                CI_ENVIRONMENT_URL = '${env.STAGING_URL}'
+                CI_ENVIRONMENT_URL = "${env.STAGING_URL}"
             }
             steps {
-                //echo "${env.CI_ENVIRONMENT_URL}"
+                echo "${env.CI_ENVIRONMENT_URL}"
                 sh '''
                     npx playwright test  --reporter=html
                 '''
