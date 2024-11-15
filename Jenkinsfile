@@ -90,7 +90,6 @@ pipeline {
                     }
                     steps {
                         sh '''
-                            #node_modules/.bin/serve -s build &
                             serve -s build &
                             sleep 10
                             npx playwright test  --reporter=html
